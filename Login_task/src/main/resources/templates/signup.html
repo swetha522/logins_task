@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        } */
+        body 
+{
+  font-family:sans-serif; 
+  background: -webkit-linear-gradient(to right, #155799, #159957); 
+  background: linear-gradient(to right, #155799, #159957); 
+  color:whitesmoke;
+}
+
+        h1 {
+            color: #0073e6;
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: red;
+            font-size: 25px;
+        }
+
+        h3 {
+            color: green;
+            font-size: 25px;
+        }
+
+        /* form {
+            background-color: #fff;
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } */
+        form{
+    width:35rem;
+    margin: auto;
+    color:whitesmoke;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(11, 15, 13, 0.582);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+        legend {
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: left;
+            padding-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        input[type="file"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #02090f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="reset"] {
+            background-color: #ccc;
+        }
+
+        button:hover {
+            background-color: #109669;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        a button {
+            background-color: #ccc;
+        }
+        h1{
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Signup Page</h1>
+    <form action="/signup" method="post">
+        <fieldset>
+            <legend>Enter Details Here</legend>
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td><input type="text" name="fullname" placeholder="Enter Your Name"></td>
+                </tr>
+
+                <tr>
+                    <th>Mobile:</th>
+                    <td><input type="tel" pattern="[0-9]{10}" name="mobile" placeholder="Enter Your Mobile" required></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td><input type="email" name="email" placeholder="Enter Your Email"></td>
+                    <td><h2 style="color: red;" th:text="${neg}"></h2></td>
+                </tr>
+                <tr>
+                    <th>Password:</th>
+                    <td><input type="password" name="password" placeholder="Enter Your Password" required></td>
+                </tr>
+            </table>
+            <button>Signup</button>
+            <button type="reset">Reset</button>
+            <br><br>
+            <a href="/login">Already have an Account? Click here to Login</a>
+        </fieldset>
+    </form>
+    <br>
+    <script>
+        setTimeout(function () {
+            var h2Element = document.querySelector('h2');
+            var h3Element = document.querySelector('h3');
+
+            if (h2Element) {
+                h2Element.style.display = 'none';
+            }
+
+            if (h3Element) {
+                h3Element.style.display = 'none';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
